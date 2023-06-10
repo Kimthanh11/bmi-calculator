@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       {/* Start: Hero section */}
-      <p>Body Mass Index Calculator</p>
+      <p className="text-8xl text-red-500">Body Mass Index Calculator</p>
       <p>
         Better understand your weight in relation to your height using our body
         mass index (BM) calculator. While BMI is not the sole determinant of a
