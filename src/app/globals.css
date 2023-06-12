@@ -1,6 +1,12 @@
+@font-face {
+  font-family: 'Inter Font';
+  src: url('../../public/assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -17,11 +23,30 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Inter Font', Arial, sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter Font', Arial, sans-serif;
+}
+.heading-xl {
+  @apply text-[64px] font-semibold font-inter leading-extra-none;
+}
+.heading-l {
+  @apply text-[48px] font-semibold font-inter leading-extra-none;
+}
+.heading-m {
+  @apply text-[24px] font-semibold font-inter leading-extra-none;
+}
+.heading-s {
+  @apply text-[20px] font-semibold font-inter leading-extra-none;
+}
+.body-m {
+  @apply text-[16px] font-normal font-inter leading-normal;
+}
+.body-m-bold {
+  @apply text-[16px] font-semibold font-inter leading-normal;
+}
+.body-s {
+  @apply text-[14px] font-normal font-inter leading-normal;
 }

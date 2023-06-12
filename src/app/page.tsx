@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex flex-col items-center justify-between min-h-screen p-24 bg-white font-inter">
       {/* Start: Hero section */}
-      <p className="text-8xl text-red-500">Body Mass Index Calculator</p>
+      <p className="text-red-500 text-8xl">Body Mass Index Calculator</p>
       <p>
         Better understand your weight in relation to your height using our body
         mass index (BM) calculator. While BMI is not the sole determinant of a
@@ -19,15 +19,27 @@ export default function Home() {
       Your ideal weight is between .{/* <!-- add range --> */}
       {/* End: Hero section */}
       {/* Start: Your result */}
-      <p>What your BMI result means</p>
-      <p>
-        A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
-        Maintaining a healthy weight may lower your chances of experiencing
-        health issues later on, such as obesity and type 2 diabetes. Aim for a
-        nutritious diet with reduced fat and sugar content, incorporating ample
-        fruits and vegetables. Additionally, strive for regular physical
-        activity, ideally about 30 minutes daily for five days a week.
-      </p>
+      <section className="relative">
+        <div className="container flex flex-wrap px-5 py-24 mx-auto sm:flex-nowrap">
+          <div className="relative flex items-end justify-start overflow-hidden rounded-lg lg:w-1/2 md:w-1/2 sm:mr-10">
+            <img src="/assets/images/image-man-eating.webp"></img>
+          </div>
+          <div className="flex flex-col items-end justify-center w-full bg-white lg:w-1/2 lg:mt-32 md:w-1/2 md:ml-auto">
+            <p className="heading-l lg:mb-8 text-gunmental">
+              What your BMI result means
+            </p>
+            <p className="body-m text-darkblue">
+              A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
+              Maintaining a healthy weight may lower your chances of
+              experiencing health issues later on, such as obesity and type 2
+              diabetes. Aim for a nutritious diet with reduced fat and sugar
+              content, incorporating ample fruits and vegetables. Additionally,
+              strive for regular physical activity, ideally about 30 minutes
+              daily for five days a week.
+            </p>
+          </div>
+        </div>
+      </section>
       {/* End: Your result */}
       {/* Start: Tips */}
       <p>Healthy eating</p>
