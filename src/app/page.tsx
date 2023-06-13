@@ -20,15 +20,15 @@ export default function Home() {
       {/* End: Hero section */}
       {/* Start: Your result */}
       <section className="relative">
-        <div className="container flex flex-wrap px-5 py-24 mx-auto sm:flex-nowrap">
-          <div className="relative flex items-end justify-start overflow-hidden rounded-lg lg:w-1/2 md:w-1/2 sm:mr-10">
+        <div className="py-24 lg:flex md:grid md:grid-cols-2 lg:px-5 lg:gap-32 md:gap-0">
+          <div className="md:max-w-sm lg:w-1/2">
             <img src="/assets/images/image-man-eating.webp"></img>
           </div>
-          <div className="flex flex-col items-end justify-center w-full bg-white lg:w-1/2 lg:mt-32 md:w-1/2 md:ml-auto">
-            <p className="heading-l lg:mb-8 text-gunmental">
+          <div className="bg-white lg:flex lg:flex-col lg:justify-center lg:w-1/2 lg:mt-32">
+            <p className="mb-8 lg:text-[48px] font-semibold leading-extra-none md:text-[32px] font-inter text-gunmental">
               What your BMI result means
             </p>
-            <p className="body-m text-darkblue">
+            <p className="lg:w-3/4 body-m text-darkblue">
               A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
               Maintaining a healthy weight may lower your chances of
               experiencing health issues later on, such as obesity and type 2
