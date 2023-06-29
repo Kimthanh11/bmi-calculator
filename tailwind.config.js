@@ -22,7 +22,7 @@ module.exports = {
         borders: "#D8E2E7",
       },
       screens: {
-        sm: { min: "640px", max: "767px" },
+        xs: "375px",
         // => @media (min-width: 640px and max-width: 767px) { ... }
 
         md: { min: "768px", max: "1023" },

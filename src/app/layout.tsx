@@ -16,12 +16,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="./assets/images/favicon-32x32.png"
-        />
         <title>Frontend Mentor | Body Mass Index Calculator</title>
       </head>
       <body className={inter.className}>{children}</body>
