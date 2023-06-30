@@ -31,6 +31,9 @@ module.exports = {
         lg: { min: "1024px" },
         // => @media (min-width: 1024px) { ... }
       },
+      boxShadow: {
+        box: "16px 32px 56px 0px rgba(143, 174, 207, 0.25)",
+      },
     },
   },
   plugins: [],
