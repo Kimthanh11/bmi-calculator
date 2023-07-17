@@ -50,3 +50,9 @@ body {
 .body-s {
   @apply text-[14px] font-normal font-inter leading-normal;
 }
+
+.radio {
+  fill: var(--pure-white, #FFF);
+  stroke-width: 1px;
+  stroke: var(--borders, #D8E2E7);
+}

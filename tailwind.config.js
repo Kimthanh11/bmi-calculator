@@ -33,6 +33,11 @@ module.exports = {
       },
       boxShadow: {
         box: "16px 32px 56px 0px rgba(143, 174, 207, 0.25)",
+        hero: "16px 32px 56px 0px rgba(143, 174, 207, 0.25)",
+      },
+      backgroundImage: {
+        "gradient-linear":
+          "linear-gradient(315deg, #D6E6FE 0%, rgba(214, 252, 254, 0.00) 100%)",
       },
     },
   },
