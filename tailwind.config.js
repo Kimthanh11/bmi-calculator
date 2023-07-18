@@ -25,10 +25,10 @@ module.exports = {
         xs: "375px",
         // => @media (min-width: 640px and max-width: 767px) { ... }
 
-        md: { min: "768px", max: "1023" },
+        md: "767px",
         // => @media (min-width: 768px and max-width: 1023px) { ... }
 
-        lg: { min: "1024px" },
+        lg: "1024px",
         // => @media (min-width: 1024px) { ... }
       },
       boxShadow: {

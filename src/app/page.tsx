@@ -55,26 +55,26 @@ export default function Home() {
   }, [cm, kg, ft, hin, st, lbs, metric]);
 
   return (
-    <main className="relative flex flex-col items-center justify-between bg-white xs: xs:p-0 lg:p-24 font-inter">
+    <main className="relative flex flex-col items-center justify-between p-0 bg-white lg:p-24 font-inter">
       <div>
         {/* Start: Hero section */}
-        <div className="xs:p-6 xs:flex xs:flex-col xs:items-center xs:h-[640px] xs:rounded-b-3xl xs:bg-gradient-linear">
+        <div className="p-6 flex flex-col items-center h-[640px] rounded-b-3xl bg-gradient-linear">
           <img src="/assets/images/logo.svg" width={40} height={40}></img>
-          <p className=" font-normal text-center leading-extra-none xs:py-6 xs:text-[48px] font-inter text-gunmental">
+          <p className="text-center leading-extra-none py-6 text-[48px] font-inter text-gunmental md:w-1/2 font-[600]">
             Body Mass Index Calculator
           </p>
-          <p className="xs:body-m xs:text-center">
+          <p className="text-center body-m text-darkblue">
             Better understand your weight in relation to your height using our
             body mass index (BM) calculator. While BMI is not the sole
             determinant of a healthy weight, it offers a valuable starting point
             to evaluate your overall health and well-being.
           </p>
         </div>
-        <div className="xs:p-4 xs:flex xs:flex-col xs:rounded-2xl xs:mx-6 xs:gap-6 xs:absolute xs:bg-white xs:top-[471px] xs:shadow-hero">
-          <p className="heading-m font-bold">Enter your details below</p>
-          <div className="flex justify-start xs:font-bold">
+        <div className="md:top-[400px] p-4 flex flex-col rounded-2xl mx-6 gap-6 absolute bg-white top-[471px] shadow-hero md:ml-[39px] md:mr-[43px] md:p-8 md:gap-8 md:w-[686px]">
+          <p className="font-bold heading-m">Enter your details below</p>
+          <div className="flex justify-start font-bold md:grid md:grid-cols-2 md:gap-6">
             <div
-              className="flex xs:gap-[18px] xs:mr-20"
+              className="flex gap-[18px] mr-20"
               onClick={() => {
                 setMetric(true);
               }}
@@ -96,7 +96,7 @@ export default function Home() {
             </div>
 
             <div
-              className="flex xs:gap-[18px]"
+              className="flex gap-[18px]"
               onClick={() => {
                 setMetric(false);
               }}
@@ -118,106 +118,126 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="z-10">
-            <p className="xs:mt-4 xs:text-[14px] xs:font-normal xs:text-[#5E6E85] xs:font-inter xs:leading-normal">
-              Height
-            </p>
-            {metric ? (
-              <div className="flex xs:rounded-[12px] border border-[#D8E2E7] xs:mt-2 xs:py-5 xs:px-6 w-full hover:border-[#345FF6] ">
-                <input
-                  placeholder="0"
-                  className="xs:mr-6 focus:outline-none heading-m font-[600] w-full"
-                  value={cm || ""}
-                  onChange={(e) => {
-                    setCm(parseFloat(e.target.value));
-                  }}
-                ></input>
-                <p className="heading-m text-[#345FF6] font-[600]">cm</p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-2 gap-4 w-full">
-                <div className="flex xs:rounded-[12px] border border-[#D8E2E7] xs:mt-2 xs:py-5 xs:px-6 hover:border-[#345FF6] w-full">
+          {metric ? (
+            <div className="z-10 md:grid md:grid-cols-2 md:gap-6">
+              <div>
+                <p className="mt-4 text-[14px] font-normal text-[#5E6E85] font-inter leading-normal">
+                  Height
+                </p>
+                <div className="flex rounded-[12px] border border-[#D8E2E7] mt-2 py-5 px-6 w-full hover:border-[#345FF6] ">
                   <input
                     placeholder="0"
-                    className="xs:mr-6 focus:outline-none w-full heading-m font-[600]"
-                    value={ft || ""}
+                    className="mr-6 focus:outline-none heading-m font-[600] w-full"
+                    value={cm || ""}
                     onChange={(e) => {
-                      setFt(parseFloat(e.target.value));
+                      setCm(parseFloat(e.target.value));
                     }}
                   ></input>
-                  <p className="heading-m text-[#345FF6] font-[600]">ft</p>
-                </div>
-                <div className="flex xs:rounded-[12px] border border-[#D8E2E7] xs:mt-2 xs:py-5 xs:px-6 hover:border-[#345FF6] w-full">
-                  <input
-                    placeholder="0"
-                    className="xs:mr-6 focus:outline-none heading-m font-[600] w-full"
-                    value={hin || ""}
-                    onChange={(e) => {
-                      setHin(parseFloat(e.target.value));
-                    }}
-                  ></input>
-                  <p className="heading-m text-[#345FF6] font-[600]">in</p>
+                  <p className="heading-m text-[#345FF6] font-[600]">cm</p>
                 </div>
               </div>
-            )}
 
-            <p className="xs:mt-4 xs:text-[14px] xs:font-normal xs:text-[#5E6E85] xs:font-inter xs:leading-normal">
-              Weight
-            </p>
-            {metric ? (
-              <div className="flex xs:rounded-[12px] border border-[#D8E2E7] xs:mt-2 xs:py-5 xs:px-6 w-full hover:border-[#345FF6]">
-                <input
-                  placeholder="0"
-                  className="xs:mr-6 focus:outline-none heading-m font-[600] w-full"
-                  value={kg || ""}
-                  onChange={(e) => {
-                    setKg(parseFloat(e.target.value));
-                  }}
-                ></input>
-                <p className="heading-m text-[#345FF6] font-[600]">kg</p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-2 gap-4 w-full">
-                <div className="flex xs:rounded-[12px] border border-[#D8E2E7] xs:mt-2 xs:py-5 xs:px-6 hover:border-[#345FF6] w-full">
+              <div>
+                <p className="mt-4 text-[14px] font-normal text-[#5E6E85] font-inter leading-normal">
+                  Weight
+                </p>
+                <div className="flex rounded-[12px] border border-[#D8E2E7] mt-2 py-5 px-6 w-full hover:border-[#345FF6]">
                   <input
                     placeholder="0"
-                    className="xs:mr-6 focus:outline-none heading-m font-[600] w-full"
-                    value={st || ""}
+                    className="mr-6 focus:outline-none heading-m font-[600] w-full"
+                    value={kg || ""}
                     onChange={(e) => {
-                      setSt(parseFloat(e.target.value));
+                      setKg(parseFloat(e.target.value));
                     }}
                   ></input>
-                  <p className="heading-m text-[#345FF6] font-[600]">st</p>
-                </div>
-                <div className="flex xs:rounded-[12px] border border-[#D8E2E7] xs:mt-2 xs:py-5 xs:px-6 hover:border-[#345FF6] w-full">
-                  <input
-                    placeholder="0"
-                    className="xs:mr-6 focus:outline-none heading-m font-[600] w-full"
-                    value={lbs || ""}
-                    onChange={(e) => {
-                      setLbs(parseFloat(e.target.value));
-                    }}
-                  ></input>
-                  <p className="heading-m text-[#345FF6] font-[600]">lbs</p>
+                  <p className="heading-m text-[#345FF6] font-[600]">kg</p>
                 </div>
               </div>
-            )}
-          </div>
-
-          {bmi ? (
-            <div className="rounded-2xl bg-gradient-to-r from-[#345FF6] to-[#587DFF] p-8 text-white">
-              <p className="body-m font-[600]">Your BMI is...</p>
-              <p className="font-Inter text-[48px] font-[600] mb-6">{bmi}</p>
-              <p className="body-s pr-12">
-                Your BMI suggests you're a <span>{classification}</span>. Your
-                ideal weight is between
-                <span className="font-bold">{range}</span>
-              </p>
             </div>
           ) : (
-            <div className="rounded-2xl bg-gradient-to-r from-[#345FF6] to-[#587DFF] p-8 text-white">
+            <div className="z-10">
+              <div>
+                <p className="mt-4 text-[14px] font-normal text-[#5E6E85] font-inter leading-normal">
+                  Height
+                </p>
+                <div className="grid w-full grid-cols-2 gap-4 md:grid-rows-1">
+                  <div className="flex rounded-[12px] border border-[#D8E2E7] mt-2 py-5 px-6 hover:border-[#345FF6] w-full">
+                    <input
+                      placeholder="0"
+                      className="mr-6 focus:outline-none w-full heading-m font-[600]"
+                      value={ft || ""}
+                      onChange={(e) => {
+                        setFt(parseFloat(e.target.value));
+                      }}
+                    ></input>
+                    <p className="heading-m text-[#345FF6] font-[600]">ft</p>
+                  </div>
+                  <div className="flex rounded-[12px] border border-[#D8E2E7] mt-2 py-5 px-6 hover:border-[#345FF6] w-full">
+                    <input
+                      placeholder="0"
+                      className="mr-6 focus:outline-none heading-m font-[600] w-full"
+                      value={hin || ""}
+                      onChange={(e) => {
+                        setHin(parseFloat(e.target.value));
+                      }}
+                    ></input>
+                    <p className="heading-m text-[#345FF6] font-[600]">in</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <p className="mt-4 text-[14px] font-normal text-[#5E6E85] font-inter leading-normal">
+                  Weight
+                </p>
+                <div className="grid w-full grid-cols-2 gap-4">
+                  <div className="flex rounded-[12px] border border-[#D8E2E7] mt-2 py-5 px-6 hover:border-[#345FF6] w-full">
+                    <input
+                      placeholder="0"
+                      className="mr-6 focus:outline-none heading-m font-[600] w-full"
+                      value={st || ""}
+                      onChange={(e) => {
+                        setSt(parseFloat(e.target.value));
+                      }}
+                    ></input>
+                    <p className="heading-m text-[#345FF6] font-[600]">st</p>
+                  </div>
+                  <div className="flex rounded-[12px] border border-[#D8E2E7] mt-2 py-5 px-6 hover:border-[#345FF6] w-full">
+                    <input
+                      placeholder="0"
+                      className="mr-6 focus:outline-none heading-m font-[600] w-full"
+                      value={lbs || ""}
+                      onChange={(e) => {
+                        setLbs(parseFloat(e.target.value));
+                      }}
+                    ></input>
+                    <p className="heading-m text-[#345FF6] font-[600]">lbs</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {bmi ? (
+            <div className="rounded-2xl md:rounded-r-[200px] md:rounded-l-2xl bg-gradient-to-r from-[#345FF6] to-[#587DFF] p-8 text-white md:grid md:grid-cols-2 md:gap-6 md:items-center md:p-8">
+              <div>
+                <p className="body-m font-[600]">Your BMI is...</p>
+                <p className="font-Inter text-[48px] font-[600] mb-6 md:mt-2 md:mb-0">
+                  {bmi}
+                </p>
+              </div>
+              <div>
+                <p className="pr-12 body-s">
+                  Your BMI suggests you're a <span>{classification}</span>. Your
+                  ideal weight is between
+                  <span className="font-bold">{range}</span>
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div className="rounded-2xl md:rounded-r-[999px]  bg-gradient-to-r from-[#345FF6] to-[#587DFF] p-8 text-white">
               <p className="heading-m font-[600]">Welcome!</p>
-              <p className="body-s mt-4">
+              <p className="mt-4 body-s">
                 Enter your height and weight and you’ll see your BMI result here
               </p>
             </div>
@@ -226,13 +246,13 @@ export default function Home() {
       </div>
       {/* End: Hero section */}
       {/* Start: Your result */}
-      <section className="relative xs:mt-96">
+      <section className="relative mt-96">
         <div className="py-24 lg:flex md:grid md:grid-cols-2 lg:px-5 lg:gap-32 md:gap-0">
-          <div className="md:max-w-xs lg:w-1/2 xs:mt-20">
+          <div className="mt-20 md:max-w-xs lg:w-1/2">
             <img src="/assets/images/image-man-eating.webp"></img>
           </div>
-          <div className="bg-white lg:flex lg:flex-col lg:justify-center lg:w-1/2 lg:mt-32 xs:p-6">
-            <p className="mb-8 lg:text-[48px] font-semibold leading-extra-none md:text-[32px] font-inter text-gunmental xs:text-[32px]">
+          <div className="p-6 bg-white lg:flex lg:flex-col lg:justify-center lg:w-1/2 lg:mt-32">
+            <p className="mb-8 lg:text-[48px] font-semibold leading-extra-none md:text-[32px] font-inter text-gunmental text-[32px]">
               What your BMI result means
             </p>
             <p className="lg:w-3/4 body-m text-darkblue">
@@ -249,132 +269,128 @@ export default function Home() {
       </section>
       {/* End: Your result */}
       {/* Start: Tips */}
-      <div className="lg:grid lg:grid-cols-3 xs:mb-[72px] lg:gap-10 lg:mx-28 xs:ml-5 xs:mr-7">
-        <div className="lg:mb-24 xs:mb-10">
-          <img
-            src="/assets/images/icon-eating.svg"
-            className="xs:h-16 xs:w-16"
-          ></img>
-          <p className="heading-m lg:mt-11 xs:mt-8">Healthy eating</p>
-          <p className="mt-6 body-m">
-            Healthy eating promotes weight control, disease prevention, better
-            digestion, immunity, mental clarity, and mood.
-          </p>
+      <div className="lg:grid lg:grid-cols-3 mb-[72px] lg:gap-10 lg:mx-28 ml-5 mr-7 md:ml-10 md:mr-11">
+        <div className="mb-10 lg:mb-24 md:flex md:flex-row md:gap-10 md:items-center">
+          <img src="/assets/images/icon-eating.svg" className="w-16 h-16"></img>
+          <div>
+            <p className="mt-8 heading-m lg:mt-11">Healthy eating</p>
+            <p className="mt-6 body-m">
+              Healthy eating promotes weight control, disease prevention, better
+              digestion, immunity, mental clarity, and mood.
+            </p>
+          </div>
         </div>
-        <div className="lg:mb-24 xs:mb-10">
+        <div className="mb-10 lg:mb-24 md:flex md:flex-row md:gap-10 md:items-center">
           <img
             src="/assets/images/icon-exercise.svg"
-            className="xs:h-16 xs:w-16"
+            className="w-16 h-16"
           ></img>
-          <p className="heading-m lg:mt-11 xs:mt-8">Regular exercise</p>
-          <p className="mt-6 body-m">
-            Exerciseimproves fitness, aids weight control, elevates mood, and
-            reduces disease risk, fostering wellness and longevity.
-          </p>
+          <div>
+            <p className="mt-8 heading-m lg:mt-11">Regular exercise</p>
+            <p className="mt-6 body-m">
+              Exerciseimproves fitness, aids weight control, elevates mood, and
+              reduces disease risk, fostering wellness and longevity.
+            </p>
+          </div>
         </div>
 
-        <div className="lg:mb-24 xs:mb-14">
-          <img
-            src="/assets/images/icon-sleep.svg"
-            className="xs:h-16 xs:w-16"
-          ></img>
-          <p className="heading-m lg:mt-11 xs:mt-8">Adequate sleep</p>
-          <p className="mt-6 body-m">
-            Sleep enhances mental clarity, emotional stability, and physical
-            wellness, promoting overall restoration and rejuvenation.
-          </p>
+        <div className="lg:mb-24 mb-14 md:flex md:flex-row md:gap-10 md:items-center">
+          <img src="/assets/images/icon-sleep.svg" className="w-16 h-16"></img>
+          <div>
+            <p className="mt-8 heading-m lg:mt-11">Adequate sleep</p>
+            <p className="mt-6 body-m">
+              Sleep enhances mental clarity, emotional stability, and physical
+              wellness, promoting overall restoration and rejuvenation.
+            </p>
+          </div>
         </div>
       </div>
       {/* Start: Tips */}
       {/* Start:Bmi-limitations */}
-      <div className="xs:mt-32 xs:ml-5 xs:mr-7">
-        <p className="xs:mb-8 xs:text-[32px] xs:font-semibold text-center xs:font-inter xs:leading-extra-none">
+      <div className="mt-32 ml-5 mr-7">
+        <p className="mb-8 text-[32px] font-semibold text-center font-inter leading-extra-none">
           Limitations of BMI
         </p>
         <div>
-          <p className="xs:text-[16px] xs:mb-14 xs:font-inter xs:leading-normal text-center">
+          <p className="text-[16px] mb-14 font-inter leading-normal text-center text-darkblue">
             Although BMI is often a practical indicator of healthy weight, it is
             not suited for every person. Specific groups should carefully
             consider their BMI outcomes, and in certain cases, the measurement
             may not be beneficial to use.
           </p>
         </div>
-        <div className="bg-white xs:mb-4 xs:p-6 rounded-2xl shadow-box xs:w-full">
-          <div className="xs:flex xs:flex-row">
-            <img
-              src="/assets/images/icon-gender.svg"
-              className="xs:w-8 xs:h-8"
-            ></img>
-            <div className="xs:text-[16px] xs:mt-1 xs:ml-4 xs:font-semibold xs:mb-4 xs:font-inter xs:leading-normal">
-              Gender
+        <div className="md:grid md:grid-cols-4 md:gap-x-4 md:gap-y-6 md:justify-center">
+          <div className="w-full p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2">
+            <div className="flex flex-row ">
+              <img
+                src="/assets/images/icon-gender.svg"
+                className="w-8 h-8"
+              ></img>
+              <div className="text-[16px] mt-1 ml-4 font-semibold mb-4 font-inter leading-normal">
+                Gender
+              </div>
+            </div>
+            <div className="text-[16px] font-inter leading-normal font-normal">
+              The development and body fat composition of girls and boys vary
+              with age. Consequently, a child's age and gender are considered
+              when evaluating their BMI.
             </div>
           </div>
-          <div className="xs:text-[16px] xs:font-inter xs:leading-normal xs:font-normal">
-            The development and body fat composition of girls and boys vary with
-            age. Consequently, a child's age and gender are considered when
-            evaluating their BMI.
+          <div className="p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2">
+            <div className="flex flex-row">
+              <img src="/assets/images/icon-age.svg" className="w-8 h-8"></img>
+              <p className="text-[16px] mt-1 ml-4 font-semibold mb-4 font-inter leading-normal">
+                Age
+              </p>
+            </div>
+            <div className="text-[16px] font-inter leading-normal font-normal">
+              In aging individuals, increased body fat and muscle loss may cause
+              BMI to underestimate body fat content.
+            </div>
           </div>
-        </div>
-        <div className="bg-white xs:p-6 rounded-2xl shadow-box xs:mb-4">
-          <div className="xs:flex xs:flex-row ">
-            <img
-              src="/assets/images/icon-age.svg"
-              className="xs:w-8 xs:h-8"
-            ></img>
-            <p className="xs:text-[16px] xs:mt-1 xs:ml-4 xs:font-semibold xs:mb-4 xs:font-inter xs:leading-normal">
-              Age
-            </p>
+          <div className="p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2">
+            <div className="flex flex-row ">
+              <img
+                src="/assets/images/icon-muscle.svg"
+                className="w-8 h-8"
+              ></img>
+              <p className="text-[16px] mt-1 ml-4 font-semibold mb-4 font-inter leading-normal">
+                Muscle
+              </p>
+            </div>
+            <div className="text-[16px] font-inter leading-normal font-normal">
+              BMI may misclassify muscular individuals as overweight or obese,
+              as it doesn't differentiate muscle from fat.
+            </div>
           </div>
-          <div className="xs:text-[16px] xs:font-inter xs:leading-normal xs:font-normal">
-            In aging individuals, increased body fat and muscle loss may cause
-            BMI to underestimate body fat content.
+          <div className="p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2">
+            <div className="flex flex-row ">
+              <img
+                src="/assets/images/icon-pregnancy.svg"
+                className="w-8 h-8"
+              ></img>
+              <p className="text-[16px] mt-1 ml-4 font-semibold mb-4 font-inter leading-normal">
+                Pregnancy
+              </p>
+            </div>
+            <div className="text-[16px] font-inter leading-normal font-normal">
+              Expectant mothers experience weight gain due to their growing
+              baby. Maintaining a healthy pre-pregnancy BMI is advisable to
+              minimise health risks for both mother and child.
+            </div>
           </div>
-        </div>
-        <div className="bg-white xs:p-6 rounded-2xl shadow-box xs:mb-4">
-          <div className="xs:flex xs:flex-row ">
-            <img
-              src="/assets/images/icon-muscle.svg"
-              className="xs:w-8 xs:h-8"
-            ></img>
-            <p className="xs:text-[16px] xs:mt-1 xs:ml-4 xs:font-semibold xs:mb-4 xs:font-inter xs:leading-normal">
-              Muscle
-            </p>
-          </div>
-          <div className="xs:text-[16px] xs:font-inter xs:leading-normal xs:font-normal">
-            BMI may misclassify muscular individuals as overweight or obese, as
-            it doesn't differentiate muscle from fat.
-          </div>
-        </div>
-        <div className="bg-white xs:p-6 rounded-2xl shadow-box xs:mb-4">
-          <div className="xs:flex xs:flex-row ">
-            <img
-              src="/assets/images/icon-pregnancy.svg"
-              className="xs:w-8 xs:h-8"
-            ></img>
-            <p className="xs:text-[16px] xs:mt-1 xs:ml-4 xs:font-semibold xs:mb-4 xs:font-inter xs:leading-normal">
-              Pregnancy
-            </p>
-          </div>
-          <div className="xs:text-[16px] xs:font-inter xs:leading-normal xs:font-normal">
-            Expectant mothers experience weight gain due to their growing baby.
-            Maintaining a healthy pre-pregnancy BMI is advisable to minimise
-            health risks for both mother and child.
-          </div>
-        </div>
-        <div className="bg-white xs:p-6 rounded-2xl shadow-box xs:mb-24">
-          <div className="xs:flex xs:flex-row ">
-            <img
-              src="/assets/images/icon-race.svg"
-              className="xs:w-8 xs:h-8"
-            ></img>
-            <p className="xs:text-[16px] xs:mt-1 xs:ml-4 xs:font-semibold xs:mb-4 xs:font-inter xs:leading-normal">
-              Race
-            </p>
-          </div>
-          <div className="xs:text-[16px] xs:font-inter xs:leading-normal xs:font-normal">
-            Certain health concerns may affect individuals of some Black and
-            Asian origins at lower BMIs than others. To learn more, it is
-            advised to discuss this with your GP or practice nurse.
+          <div className="p-6 mb-24 bg-white rounded-2xl shadow-box md:col-span-2 md:col-start-2">
+            <div className="flex flex-row ">
+              <img src="/assets/images/icon-race.svg" className="w-8 h-8"></img>
+              <p className="text-[16px] mt-1 ml-4 font-semibold mb-4 font-inter leading-normal">
+                Race
+              </p>
+            </div>
+            <div className="text-[16px] font-inter leading-normal font-normal">
+              Certain health concerns may affect individuals of some Black and
+              Asian origins at lower BMIs than others. To learn more, it is
+              advised to discuss this with your GP or practice nurse.
+            </div>
           </div>
         </div>
       </div>
