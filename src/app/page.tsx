@@ -247,16 +247,12 @@ export default function Home() {
       {/* End: Hero section */}
       {/* Start: Your result */}
       <section className="relative mt-96 lg:mt-0">
-        <div className="lg:p-0 lg:mt-16 md:grid md:grid-cols-12 md:gap-0 lg:place-items-end lg:mx-[140px]">
-          <div className="mt-20 lg:mt-0 lg:col-span-6">
-            <img
-              src="/assets/images/image-man-eating.webp"
-              width={564}
-              height={533}
-            ></img>
+        <div className="lg:p-0 lg:mt-16 md:grid md:grid-cols-2 lg:grid-cols-12 md:gap-[75px] lg:gap-0 lg:place-items-end lg:mx-[140px] md:mb-24 md:-ml-12 md:overflow-hidden">
+          <div className="mt-20 md:mt-0 lg:col-span-6 lg:w-[564px] lg:h-[533px] md:w-[361px] md:h-[411px]">
+            <img src="/assets/images/image-man-eating.webp"></img>
           </div>
-          <div className="p-6 bg-white lg:p-0 lg:col-span-5 lg:col-start-8">
-            <p className="mb-8 lg:heading-l font-semibold leading-extra-none md:text-[32px] font-inter text-gunmental text-[32px]">
+          <div className="p-6 bg-white lg:p-0 lg:col-span-5 lg:col-start-8 md:w-full md:p-0">
+            <p className="mb-8 lg:heading-l font-semibold leading-extra-none font-inter text-gunmental text-[32px]">
               What your BMI result means
             </p>
             <p className="leading-normal body-m text-darkblue lg:mb-16">
@@ -312,13 +308,13 @@ export default function Home() {
       {/* Start: Tips */}
       {/* Start:Bmi-limitations */}
       <div className="mt-32 ml-5 mr-7 lg:mx-[140px] mb-24">
-        <div className="md:grid md:grid-cols-4 md:gap-x-4 md:gap-y-6 md:justify-center">
+        <div className="md:grid md:grid-cols-4 md:gap-x-4 md:gap-y-6 md:justify-center lg:gap-x-8 lg:gap-y-6">
           <div className="md:col-span-4 lg:col-span-6">
-            <p className="mb-8 text-[32px] font-semibold text-center font-inter leading-extra-none">
+            <p className="mb-8 lg:mb-[35px] text-[32px] font-semibold text-center font-inter leading-extra-none lg:heading-l lg:text-left">
               Limitations of BMI
             </p>
             <div>
-              <p className="text-[16px] mb-14 font-inter leading-normal text-center text-darkblue">
+              <p className="text-[16px] mb-14 font-inter leading-normal text-center text-darkblue lg:text-left">
                 Although BMI is often a practical indicator of healthy weight,
                 it is not suited for every person. Specific groups should
                 carefully consider their BMI outcomes, and in certain cases, the
