@@ -55,8 +55,8 @@ export default function Home() {
   }, [cm, kg, ft, hin, st, lbs, metric]);
 
   return (
-    <main className="relative flex flex-col items-center justify-between p-0 bg-white lg:ml-6 lg:w-2/3 font-inter">
-      <div>
+    <main className="relative flex flex-col items-center p-0 bg-white lg:items-start font-inter">
+      <div className="lg:w-2/3 lg:ml-0">
         {/* Start: Hero section */}
         <div className="p-6 flex flex-col items-center lg:items-start lg:w-[978px] lg:h-[737px] h-[640px] rounded-b-3xl bg-gradient-linear lg:ml-6 lg:pt-[75px]">
           <img src="/assets/images/logo.svg" width={40} height={40}></img>
@@ -246,16 +246,20 @@ export default function Home() {
       </div>
       {/* End: Hero section */}
       {/* Start: Your result */}
-      <section className="relative mt-96">
-        <div className="py-24 lg:flex md:grid md:grid-cols-2 lg:px-5 lg:gap-32 md:gap-0">
-          <div className="mt-20 md:max-w-xs lg:w-1/2">
-            <img src="/assets/images/image-man-eating.webp"></img>
+      <section className="relative mt-96 lg:mt-0">
+        <div className="lg:p-0 lg:mt-16 md:grid md:grid-cols-12 md:gap-0 lg:place-items-end lg:mx-[140px]">
+          <div className="mt-20 lg:mt-0 lg:col-span-6">
+            <img
+              src="/assets/images/image-man-eating.webp"
+              width={564}
+              height={533}
+            ></img>
           </div>
-          <div className="p-6 bg-white lg:flex lg:flex-col lg:justify-center lg:w-1/2 lg:mt-32">
-            <p className="mb-8 lg:text-[48px] font-semibold leading-extra-none md:text-[32px] font-inter text-gunmental text-[32px]">
+          <div className="p-6 bg-white lg:p-0 lg:col-span-5 lg:col-start-8">
+            <p className="mb-8 lg:heading-l font-semibold leading-extra-none md:text-[32px] font-inter text-gunmental text-[32px]">
               What your BMI result means
             </p>
-            <p className="lg:w-3/4 body-m text-darkblue">
+            <p className="leading-normal body-m text-darkblue lg:mb-16">
               A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
               Maintaining a healthy weight may lower your chances of
               experiencing health issues later on, such as obesity and type 2
@@ -269,8 +273,8 @@ export default function Home() {
       </section>
       {/* End: Your result */}
       {/* Start: Tips */}
-      <div className="lg:grid lg:grid-cols-3 mb-[72px] lg:gap-10 lg:mx-28 ml-5 mr-7 md:ml-10 md:mr-11">
-        <div className="mb-10 lg:mb-24 md:flex md:flex-row md:gap-10 md:items-center">
+      <div className="lg:grid lg:grid-cols-3 mb-[72px] lg:gap-10 lg:m-0 lg:mt-24 ml-5 mr-7 md:ml-10 md:mr-11 lg:mx-[140px]">
+        <div className="mb-10 lg:mb-24 md:flex md:flex-row md:gap-10 lg:flex-col md:items-center lg:items-start">
           <img src="/assets/images/icon-eating.svg" className="w-16 h-16"></img>
           <div>
             <p className="mt-8 heading-m lg:mt-11">Healthy eating</p>
@@ -280,7 +284,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="mb-10 lg:mb-24 md:flex md:flex-row md:gap-10 md:items-center">
+        <div className="mb-10 lg:mb-24 md:flex md:flex-row md:gap-10 md:items-center lg:flex-col lg:items-start">
           <img
             src="/assets/images/icon-exercise.svg"
             className="w-16 h-16"
@@ -294,7 +298,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="lg:mb-24 mb-14 md:flex md:flex-row md:gap-10 md:items-center">
+        <div className="lg:mb-24 mb-14 md:flex md:flex-row md:gap-10 md:items-center lg:flex-col lg:items-start">
           <img src="/assets/images/icon-sleep.svg" className="w-16 h-16"></img>
           <div>
             <p className="mt-8 heading-m lg:mt-11">Adequate sleep</p>
@@ -307,20 +311,22 @@ export default function Home() {
       </div>
       {/* Start: Tips */}
       {/* Start:Bmi-limitations */}
-      <div className="mt-32 ml-5 mr-7">
-        <p className="mb-8 text-[32px] font-semibold text-center font-inter leading-extra-none">
-          Limitations of BMI
-        </p>
-        <div>
-          <p className="text-[16px] mb-14 font-inter leading-normal text-center text-darkblue">
-            Although BMI is often a practical indicator of healthy weight, it is
-            not suited for every person. Specific groups should carefully
-            consider their BMI outcomes, and in certain cases, the measurement
-            may not be beneficial to use.
-          </p>
-        </div>
+      <div className="mt-32 ml-5 mr-7 lg:mx-[140px] mb-24">
         <div className="md:grid md:grid-cols-4 md:gap-x-4 md:gap-y-6 md:justify-center">
-          <div className="w-full p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2">
+          <div className="md:col-span-4 lg:col-span-6">
+            <p className="mb-8 text-[32px] font-semibold text-center font-inter leading-extra-none">
+              Limitations of BMI
+            </p>
+            <div>
+              <p className="text-[16px] mb-14 font-inter leading-normal text-center text-darkblue">
+                Although BMI is often a practical indicator of healthy weight,
+                it is not suited for every person. Specific groups should
+                carefully consider their BMI outcomes, and in certain cases, the
+                measurement may not be beneficial to use.
+              </p>
+            </div>
+          </div>
+          <div className="w-full p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2 lg:col-span-4 lg:col-start-8 lg:w-[365px] lg:h-auto">
             <div className="flex flex-row ">
               <img
                 src="/assets/images/icon-gender.svg"
@@ -336,7 +342,7 @@ export default function Home() {
               when evaluating their BMI.
             </div>
           </div>
-          <div className="p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2">
+          <div className="p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2 lg:col-span-4 lg:col-start-5 lg:w-[365px] lg:h-auto">
             <div className="flex flex-row">
               <img src="/assets/images/icon-age.svg" className="w-8 h-8"></img>
               <p className="text-[16px] mt-1 ml-4 font-semibold mb-4 font-inter leading-normal">
@@ -348,7 +354,7 @@ export default function Home() {
               BMI to underestimate body fat content.
             </div>
           </div>
-          <div className="p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2">
+          <div className="p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2 lg:col-span-4 lg:col-start-9 lg:w-[365px] lg:h-auto">
             <div className="flex flex-row ">
               <img
                 src="/assets/images/icon-muscle.svg"
@@ -363,7 +369,7 @@ export default function Home() {
               as it doesn't differentiate muscle from fat.
             </div>
           </div>
-          <div className="p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2">
+          <div className="p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2 lg:col-span-4 lg:col-start-3 lg:w-[365px] lg:h-auto">
             <div className="flex flex-row ">
               <img
                 src="/assets/images/icon-pregnancy.svg"
@@ -379,7 +385,7 @@ export default function Home() {
               minimise health risks for both mother and child.
             </div>
           </div>
-          <div className="p-6 mb-24 bg-white rounded-2xl shadow-box md:col-span-2 md:col-start-2">
+          <div className="p-6 mb-4 bg-white rounded-2xl shadow-box md:col-span-2 md:col-start-2 lg:col-span-4 lg:col-start-7 lg:w-[365px] lg:h-auto">
             <div className="flex flex-row ">
               <img src="/assets/images/icon-race.svg" className="w-8 h-8"></img>
               <p className="text-[16px] mt-1 ml-4 font-semibold mb-4 font-inter leading-normal">
