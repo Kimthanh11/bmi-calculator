@@ -55,22 +55,22 @@ export default function Home() {
   }, [cm, kg, ft, hin, st, lbs, metric]);
 
   return (
-    <main className="relative flex flex-col items-center justify-between p-0 bg-white lg:p-24 font-inter">
+    <main className="relative flex flex-col items-center justify-between p-0 bg-white lg:ml-6 lg:w-2/3 font-inter">
       <div>
         {/* Start: Hero section */}
-        <div className="p-6 flex flex-col items-center h-[640px] rounded-b-3xl bg-gradient-linear">
+        <div className="p-6 flex flex-col items-center lg:items-start lg:w-[978px] lg:h-[737px] h-[640px] rounded-b-3xl bg-gradient-linear lg:ml-6 lg:pt-[75px]">
           <img src="/assets/images/logo.svg" width={40} height={40}></img>
-          <p className="text-center leading-extra-none py-6 text-[48px] font-inter text-gunmental md:w-1/2 font-[600]">
+          <p className="text-center lg:text-left leading-extra-none py-6 text-[48px] font-inter text-gunmental md:w-1/2 font-[600] lg:mt-32">
             Body Mass Index Calculator
           </p>
-          <p className="text-center body-m text-darkblue">
+          <p className="text-center body-m text-darkblue lg:w-1/2 lg:text-left">
             Better understand your weight in relation to your height using our
             body mass index (BM) calculator. While BMI is not the sole
             determinant of a healthy weight, it offers a valuable starting point
             to evaluate your overall health and well-being.
           </p>
         </div>
-        <div className="md:top-[400px] p-4 flex flex-col rounded-2xl mx-6 gap-6 absolute bg-white top-[471px] shadow-hero md:ml-[39px] md:mr-[43px] md:p-8 md:gap-8 md:w-[686px]">
+        <div className="md:top-[400px] p-4 flex flex-col rounded-2xl mx-6 gap-6 absolute bg-white top-[471px] shadow-hero md:ml-[39px] md:mr-[43px] md:p-8 md:gap-8 md:w-[686px] lg:top-[166px] lg:left-[736px] lg:m-0 lg:w-[564px] lg:h-auto">
           <p className="font-bold heading-m">Enter your details below</p>
           <div className="flex justify-start font-bold md:grid md:grid-cols-2 md:gap-6">
             <div
@@ -219,7 +219,7 @@ export default function Home() {
           )}
 
           {bmi ? (
-            <div className="rounded-2xl md:rounded-r-[200px] md:rounded-l-2xl bg-gradient-to-r from-[#345FF6] to-[#587DFF] p-8 text-white md:grid md:grid-cols-2 md:gap-6 md:items-center md:p-8">
+            <div className="rounded-2xl md:rounded-r-[200px] md:rounded-l-2xl bg-gradient-to-r from-[#345FF6] to-[#587DFF] p-8 text-white md:grid md:grid-cols-2 md:gap-6 md:items-center md:p-8 lg:w-full lg:h-auto">
               <div>
                 <p className="body-m font-[600]">Your BMI is...</p>
                 <p className="font-Inter text-[48px] font-[600] mb-6 md:mt-2 md:mb-0">
@@ -235,7 +235,7 @@ export default function Home() {
               </div>
             </div>
           ) : (
-            <div className="rounded-2xl md:rounded-r-[999px]  bg-gradient-to-r from-[#345FF6] to-[#587DFF] p-8 text-white">
+            <div className="rounded-2xl md:rounded-r-[999px]  bg-gradient-to-r from-[#345FF6] to-[#587DFF] p-8 text-white lg:w-full lg:h-auto lg:p-8">
               <p className="heading-m font-[600]">Welcome!</p>
               <p className="mt-4 body-s">
                 Enter your height and weight and you’ll see your BMI result here
