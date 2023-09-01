@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/body-mass-index-calculator-3i2cX388K4/](Solutionlink)
-- Live Site URL: [https://bmi-calculator-blond.vercel.app/]
+- Solution URL: https://www.frontendmentor.io/solutions/body-mass-index-calculator-3i2cX388K4/
+- Live Site URL: https://bmi-calculator-blond.vercel.app/
 
 ## My process
 
